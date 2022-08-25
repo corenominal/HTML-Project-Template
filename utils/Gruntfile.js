@@ -16,12 +16,16 @@ module.exports = function(grunt) {
         concat: {
             options: {
                 sourceMap: true,
-                outFile: '../assets/js/main.js.map',
                 separator: ';\n',
             },
-            dist: {
+            jsmain: {
                 src: ['src/js/main*.js'],
                 dest: '../assets/js/main.js',
+            },
+            jsvendor: {
+                src: ['src/js/vendor/*.js'],
+                dest: '../assets/js/vendor/bundle.js',
+
             },
         },
         watch: {
@@ -29,9 +33,13 @@ module.exports = function(grunt) {
                 files: 'src/sass/**/*.scss',
                 tasks: ['dart-sass'],
             },
-            js: {
-                files: 'src/js/**/*.js',
-                tasks: ['concat'],
+            jsmain: {
+                files: 'src/js/main*.js',
+                tasks: ['concat:jsmain'],
+            },
+            jsvendor: {
+                files: 'src/js/vendor/*.js',
+                tasks: ['concat:jsvendor'],
             },
         },
     });
@@ -43,3 +51,4 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['dart-sass', 'concat', 'watch']);
 };
+
