@@ -1,0 +1,21 @@
+// Breakpoints
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+
+
+// Colours
+$color-body-background: black;
+$color-body-foreground: white;
+
+
+$font-family-sans: "Liberation Sans",Arial,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$font-family-monospace: "Liberation Mono",SFMono-Regular,Menlo,Monaco,Consolas,"Courier New",monospace;
+$font-family-serif: Georgia, serif;
+$font-family-default: $font-family-sans;
+$font-size-default: 1.5rem;
+$font-size-sm: 1.6rem;
+$font-size-lg: 2.4rem;
+
+$line-height-body: 1.5;

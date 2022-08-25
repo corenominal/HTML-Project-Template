@@ -1,0 +1,14 @@
+// Utility classes for setting widths and heights
+$sizes: 10,20,25,30,40,50,60,70,75,80,90,100;
+
+.fw {min-width: 100%;}
+.fh {min-height: 100vh;}
+@each $size in $sizes {
+    .w-#{$size} {
+        min-width: $size+#{'%'} !important;
+    }
+
+    .h-#{$size} {
+        min-height: $size+vh !important;
+    }
+}

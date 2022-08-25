@@ -1,0 +1,9 @@
+// Utility classes for setting paddings
+// Inspired by Bootstrap
+@for $i from 0 through 6 {
+    .p-#{$i} { padding: $i+.0rem !important; }
+    .pt-#{$i} { padding-top: $i+.0rem !important; }
+    .pr-#{$i} { padding-right: $i+.0rem !important; }
+    .pb-#{$i} { padding-bottom: $i+.0rem !important; }
+    .pl-#{$i} { padding-left: $i+.0rem !important; }
+}
