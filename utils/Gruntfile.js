@@ -13,19 +13,14 @@ module.exports = function(grunt) {
                 ],
             },
         },
-        concat: {
-            options: {
-                sourceMap: true,
-                separator: ';\n',
-            },
-            jsmain: {
-                src: ['src/js/main*.js'],
-                dest: '../assets/js/main.js',
-            },
-            jsvendor: {
-                src: ['src/js/vendor/*.js'],
-                dest: '../assets/js/vendor/bundle.js',
-
+        copy: {
+            cpjs: {
+                files: [{
+                    cwd: 'src/js',
+                    src: '**/*',
+                    dest: '../assets/js',
+                    expand: true,
+                }],
             },
         },
         watch: {
@@ -34,21 +29,17 @@ module.exports = function(grunt) {
                 tasks: ['dart-sass'],
             },
             jsmain: {
-                files: 'src/js/main*.js',
-                tasks: ['concat:jsmain'],
-            },
-            jsvendor: {
-                files: 'src/js/vendor/*.js',
-                tasks: ['concat:jsvendor'],
+                files: 'src/js/*.js',
+                tasks: ['copy'],
             },
         },
     });
 
     grunt.loadNpmTasks('grunt-dart-sass');
-    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['dart-sass', 'concat', 'watch']);
+    grunt.registerTask('default', ['dart-sass', 'copy', 'watch']);
 };
 
